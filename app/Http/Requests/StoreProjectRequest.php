@@ -22,7 +22,30 @@ class StoreProjectRequest extends FormRequest
     public function rules(): array
     {
         return [
-            //
+            'title' =>'required|max:255',
+            'description' =>'required|max:2000',
+            'thumb' =>'required|max:255',
+            'technologies' =>'required|max:255',
+            'link' =>'required|max:255',
+        ];
+    }
+
+    public function messages(): array
+    {
+        return [
+            'required' => 'Il campo :attribute deve essere compilato.',
+            'max' => 'Il campo :attribute può contenere un massimo di :max caratteri.'
+        ];
+    }
+
+    public function attributes(): array
+    {
+        return [
+            'title' =>'"Title"',
+            'description' =>'"Description"',
+            'thumb' =>'"Thumbnail"',
+            'technologies' =>'"Technologies"',
+            'link' =>'"GitHub Link"'
         ];
     }
 }

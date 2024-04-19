@@ -25,7 +25,7 @@
     </h2>
     <div class="list-group px-3">
         <a href="{{route('projects.index')}}" class="list-group-item list-group-item-action">Projects List</a>
-        <a href="#" class="list-group-item list-group-item-action">Add Project</a>
+        <a href="{{route('projects.create')}}" class="list-group-item list-group-item-action">Add Project</a>
         <a href="#" class="list-group-item list-group-item-action">Future Features</a>
     </div>
 </div>
