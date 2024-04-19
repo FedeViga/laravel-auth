@@ -11,7 +11,7 @@
         <div class="list-group px-3">
 
             @foreach($projects as $project)
-            <a href="#" class="list-group-item list-group-item-action" aria-current="true">
+            <a href="{{route('projects.show', $project->id)}}" class="list-group-item list-group-item-action" aria-current="true">
               {{$project->title}}
             </a>
             @endforeach
