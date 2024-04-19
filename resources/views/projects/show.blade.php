@@ -10,7 +10,7 @@
 
         <div class="px-3">
 
-            <table class="table">
+            <table class="table w-auto">
                 <tbody>
                   <tr>
                     <th scope="row">Description:</th>
@@ -30,6 +30,8 @@
                   </tr>
                 </tbody>
             </table>
+
+            <a href="{{route('projects.edit', $project->id)}}" class="btn btn-outline-warning">Edit</a>
             
         </div>
 
