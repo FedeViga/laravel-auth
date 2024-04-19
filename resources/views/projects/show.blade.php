@@ -18,15 +18,15 @@
                   </tr>
                   <tr>
                     <th scope="row">Thumbnail:</th>
-                    <td>{{$project->thumb}}</td>
+                    <td><a class="text-white" href="#">{{$project->thumb}}</a></td>
                   </tr>
                   <tr>
-                    <th scope="row">Technologies:</th>
-                    <td colspan="2">{{$project->technologies}}</td>
+                    <th class="pe-3" scope="row">Technologies:</th>
+                    <td>{{$project->technologies}}</td>
                   </tr>
                   <tr>
                     <th scope="row">Github Link:</th>
-                    <td colspan="2">{{$project->link}}</td>
+                    <td><a class="text-white" href="#">{{$project->link}}</a></td>
                   </tr>
                 </tbody>
             </table>
