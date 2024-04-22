@@ -4,63 +4,68 @@
 
     <div class="container py-5">
 
-        <h2 class="mb-3">
+        <h2 class="mb-3 text-center">
             {{$project->title}}
         </h2>
 
-        <div class="px-3">
-                <table class="table w-auto">
-                    <tbody>
-                      <tr>
-                        <th scope="row" class="d-none d-sm-table-cell">
+        <div class="text-center">
+
+          <img class="img-fluid py-3" src="{{asset('storage/' . $project->thumb)}}" alt="thumb ptoject">
+  
+          <div class="px-sm-3">
+            <table class="table w-auto mx-auto text-start">
+                <tbody>
+                  <tr>
+                    <th scope="row" class="d-none d-md-table-cell">
+                        Description:
+                    </th>
+                    <td>
+                        <h5 class="d-block d-md-none">
                             Description:
-                        </th>
-                        <td>
-                            <h5 class="d-block d-sm-none">
-                                Description:
-                            </h5>
-                            {{$project->description}}
-                        </td>
-                      </tr>
-                      <tr>
-                        <th scope="row" class="d-none d-sm-table-cell">
+                        </h5>
+                        <div class="ps-2 ps-md-0">{{$project->description}}</div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <th scope="row" class="d-none d-md-table-cell">
+                        Thumbnail:
+                    </th>
+                    <td>
+                        <h5 class="d-block d-md-none">
                             Thumbnail:
-                        </th>
-                        <td>
-                            <h5 class="d-block d-sm-none">
-                                Thumbnail:
-                            </h5>
-                            <a class="text-white text-break" href="#">
-                                {{$project->thumb}}
-                            </a>
-                        </td>
-                      </tr>
-                      <tr>
-                        <th scope="row" class="d-none d-sm-table-cell">
+                        </h5>
+                        <a class="text-white text-break" href="#">
+                          <div class="ps-2 ps-md-0">{{$project->thumb}}</div>
+                        </a>
+                    </td>
+                  </tr>
+                  <tr>
+                    <th scope="row" class="d-none d-md-table-cell">
+                        Technologies:
+                    </th>
+                    <td>
+                        <h5 class="d-block d-md-none">
                             Technologies:
-                        </th>
-                        <td>
-                            <h5 class="d-block d-sm-none">
-                                Technologies:
-                            </h5>
-                            {{$project->technologies}}
-                        </td>
-                      </tr>
-                      <tr>
-                        <th scope="row" class="d-none d-sm-table-cell">
-                            Github Link:
-                        </th>
-                        <td>
-                            <h5 class="d-block d-sm-none">
-                                GitHub Links:
-                            </h5>
-                            <a class="text-white text-break" href="#">
-                                {{$project->link}}
-                            </a>
-                        </td>
-                      </tr>
-                    </tbody>
-                </table>
+                        </h5>
+                        <div class="ps-2 ps-md-0">{{$project->technologies}}</div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <th scope="row" class="d-none d-md-table-cell">
+                        Github Link:
+                    </th>
+                    <td>
+                        <h5 class="d-block d-md-none">
+                            GitHub Links:
+                        </h5>
+                        <a class="text-white text-break" href="#">
+                          <div class="ps-2 ps-md-0">{{$project->link}}</div>
+                        </a>
+                    </td>
+                  </tr>
+                </tbody>
+            </table>
+        </div>
 
             <a href="{{route('projects.edit', $project->id)}}" class="btn btn-outline-warning">Edit</a>
 
