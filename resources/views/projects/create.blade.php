@@ -9,7 +9,7 @@
         </h2>
 
         <div class="px-3">
-            <form action="{{route('projects.store')}}" method="POST" class="pb-4">
+            <form action="{{route('projects.store')}}" method="POST" class="pb-4" enctype="multipart/form-data">
 
                 @csrf
         
@@ -35,7 +35,7 @@
         
                 <div class="mb-3">
                     <label for="thumb" class="form-label">Thumbnail:</label>
-                    <input type="text" class="form-control @error('thumb') is-invalid @enderror" id="thumb" name="thumb" value="{{old('thumb')}}" required>
+                    <input type="file" class="form-control @error('thumb') is-invalid @enderror" id="thumb" name="thumb" value="{{old('thumb')}}" required>
                     @error('thumb')
                     <div class="invalid-feedback">
                         {{$message}}

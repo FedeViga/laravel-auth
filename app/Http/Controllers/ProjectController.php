@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Project;
 use App\Http\Requests\StoreProjectRequest;
+use Illuminate\Support\Facades\Storage;
 
 class ProjectController extends Controller
 {
@@ -34,6 +35,11 @@ class ProjectController extends Controller
         $request->validated();
 
         $newProject = new Project();
+
+        // poichè tramite le validazioni backend la thumb è già required, salvo la variabile path senza ulteriori controlli
+        $path = Storage::disk('public')->put('project_images', $request->thumb);
+
+        $newProject->thumb = $path;
 
         $newProject->fill($request->all());
 

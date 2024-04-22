@@ -24,7 +24,7 @@ class StoreProjectRequest extends FormRequest
         return [
             'title' =>'required|max:255',
             'description' =>'required|max:2000',
-            'thumb' =>'required|max:255',
+            'thumb' =>'required|file|max:2048|mimes:jpg,bmp,png',
             'technologies' =>'required|max:255',
             'link' =>'required|max:255',
         ];
@@ -34,7 +34,9 @@ class StoreProjectRequest extends FormRequest
     {
         return [
             'required' => 'Il campo :attribute deve essere compilato.',
-            'max' => 'Il campo :attribute può contenere un massimo di :max caratteri.'
+            'max' => 'Il campo :attribute può contenere un massimo di :max caratteri.',
+            'thumb.max' => 'Il file :attribute può avere una dimensione massima di :max KB.',
+            'thumb.mimes' => "Il file :attribute deve essere un'immagine",
         ];
     }
 
