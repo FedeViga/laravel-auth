@@ -71,6 +71,11 @@ class ProjectController extends Controller
     {
         $request->validated();
 
+        // poichè tramite le validazioni backend la thumb è già required, salvo la variabile path senza ulteriori controlli
+        $path = Storage::disk('public')->put('project_images', $request->thumb);
+
+        $project->thumb = $path;
+
         $project->update($request->all());
 
         $project->save();

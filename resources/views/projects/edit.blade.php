@@ -9,7 +9,7 @@
         </h2>
 
         <div class="px-3">
-            <form action="{{route('projects.update', $project->id)}}" method="POST" class="pb-4">
+            <form action="{{route('projects.update', $project->id)}}" method="POST" class="pb-4" enctype="multipart/form-data">
 
                 @csrf
                 @method('PUT')
@@ -36,12 +36,13 @@
         
                 <div class="mb-3">
                     <label for="thumb" class="form-label">Thumbnail:</label>
-                    <input type="text" class="form-control @error('thumb') is-invalid @enderror" id="thumb" name="thumb" value="{{old('thumb')  ?? $project->thumb}}" required>
+                    <input type="file" class="form-control @error('thumb') is-invalid @enderror" id="thumb" name="thumb" required>
                     @error('thumb')
                     <div class="invalid-feedback">
                         {{$message}}
                     </div>
                     @enderror
+                    <img class="img-fluid py-2" src="{{asset('storage/' . $project->thumb)}}" alt="thumb ptoject" style="max-height:100px">
                 </div>
         
                 <div class="mb-3">
