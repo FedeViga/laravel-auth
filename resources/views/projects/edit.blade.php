@@ -42,7 +42,7 @@
                         {{$message}}
                     </div>
                     @enderror
-                    <img class="img-fluid py-2" src="{{asset('storage/' . $project->thumb)}}" alt="thumb ptoject" style="max-height:100px">
+                    <img class="img-fluid py-2" src="{{asset('storage/' . $project->thumb)}}" alt="Project Thumbnail" style="max-height:100px">
                 </div>
         
                 <div class="mb-3">

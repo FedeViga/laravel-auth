@@ -21,9 +21,9 @@ class ProjectSeeder extends Seeder
 
             $newProject->title = $faker->numerify('Project-####');
             $newProject->description = $faker->text(500);
-            $newProject->thumb = $faker->imageUrl(640, 480);
+            $newProject->thumb = 'project_images/' . $faker->uuid();
             $newProject->technologies = implode(', ', $faker->randomElements(['html', 'css', 'javascript', 'vue.js', 'php', 'laravel'], null));
-            $newProject->link = $faker->url();
+            $newProject->link = 'https://github.com/' . $newProject->title;
 
             $newProject->save();
         }

@@ -10,7 +10,7 @@
 
         <div class="text-center">
 
-          <img class="img-fluid py-3" src="{{asset('storage/' . $project->thumb)}}" alt="thumb ptoject">
+          <img class="img-fluid py-3" src="{{asset('storage/' . $project->thumb)}}" alt="Project Thumbnail">
   
           <div class="px-sm-3">
             <table class="table w-auto mx-auto text-start">
@@ -24,19 +24,6 @@
                             Description:
                         </h5>
                         <div class="ps-2 ps-md-0">{{$project->description}}</div>
-                    </td>
-                  </tr>
-                  <tr>
-                    <th scope="row" class="d-none d-md-table-cell">
-                        Thumbnail:
-                    </th>
-                    <td>
-                        <h5 class="d-block d-md-none">
-                            Thumbnail:
-                        </h5>
-                        <a class="text-white text-break" href="#">
-                          <div class="ps-2 ps-md-0">{{$project->thumb}}</div>
-                        </a>
                     </td>
                   </tr>
                   <tr>
